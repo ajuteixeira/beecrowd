@@ -1,15 +1,21 @@
-// BEE1012
+//BEE1012
 
-// Entrada de valores
-const input = require('fs').readFileSync('data/1012.txt', 'utf8');
-const lines = input.split('\r\n');
+let input = require('fs').readFileSync('data/1012.txt', 'utf-8');
+let lines = input.split('\r\n');
 
-// Calculos
-let areaTri = (a * c) / 2;
-let areaCirc = PI * (c ** 2);
-let areaTrap = ((a + b) * c) / 2;
-let areaQuad = b ** 2;
-let areaRet = a * b;
+// declarando variaveis
+const PI = 3.14159;
+let line = lines[0].split(' ');
+let A = parseFloat(line[0]);
+let B = parseFloat(line[1]);
+let C = parseFloat(line[2]);
 
-// Saída de resultados
-console.log(`TRIANGULO: ${areaTri.toFixed(3)}\nCIRCULO: ${areaCirc.toFixed(3)}\nTRAPEZIO: ${areaTrap.toFixed(3)}\nQUADRADO: ${areaQuad.toFixed(3)}\nRETANGULO: ${areaRet.toFixed(3)}`)
+// calculando áreas
+let triRet = A * C / 2;
+let circ = PI * C ** 2;
+let trap = (A + B) * C / 2;
+let quadr = B ** 2;
+let ret = A * B;
+
+// exibindo resultados
+console.log(`TRIANGULO: ${triRet.toFixed(3)}\nCIRCULO: ${circ.toFixed(3)}\nTRAPEZIO: ${trap.toFixed(3)}\nQUADRADO: ${quadr.toFixed(3)}\nRETANGULO: ${ret.toFixed(3)}`)
